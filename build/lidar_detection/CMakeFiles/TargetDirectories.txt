@@ -1,0 +1,10 @@
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/install/strip.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/install/local.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/install.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/list_install_components.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/rebuild_cache.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/edit_cache.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/test.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/trt_infer_node.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/lidar_detection_uninstall.dir
+/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection/CMakeFiles/uninstall.dir

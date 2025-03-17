@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package format="2">
+  <!-- 包名必须与 CMakeLists.txt 中的 project() 名字一致，比如 "lidar_detection" -->
+  <name>lidar_detection</name>
+
+  <!-- 版本号，可随意填写 -->
+  <version>0.0.1</version>
+
+  <!-- 简要描述 -->
+  <description>ROS2 package for TRT inference node</description>
+
+  <!-- 维护者信息，可改成你自己的 -->
+  <maintainer email="your_email@example.com">YourName</maintainer>
+
+  <!-- 选择你合适的 License -->
+  <license>Apache-2.0</license>
+
+  <!-- 1) 构建工具依赖：ament_cmake 是最基本的 -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- 2) 运行时 + 编译时依赖:
+       你使用了 rclcpp(Node类等)，需加上 -->
+  <depend>rclcpp</depend>
+
+  <!-- 如果你有用到别的 ROS2 包，也写在这里。例如:
+       <depend>std_msgs</depend>
+       <depend>sensor_msgs</depend>
+       等等。当前示例中未见引用，就不用写 -->
+
+  <!-- 导出信息，声明这是 ament_cmake 类型的包 -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

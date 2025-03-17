@@ -1,0 +1,444 @@
+#include <chrono>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <utility>
+#include <sstream>
+
+// ------------------ ROS2 头文件 ------------------
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/string.hpp"
+
+// ------------------ 你原先的头文件 ------------------
+#include <NvInfer.h>
+#include <NvInferRuntime.h>
+#include "NvInferPlugin.h"
+#include <cuda_runtime.h>
+
+#include "include/common_trt.h"
+#include "include/io_trt.hpp"
+#include "include/voxelization_trt.h"
+#include "include/utils.h"
+#include "include/nms_trt.h"
+
+// ------------------ 保留你原先的 Logger 类和宏 ------------------
+class Logger : public nvinfer1::ILogger           
+{
+    void log(Severity severity, const char* msg) noexcept override
+    {
+        switch(severity) {
+            case Severity::kINTERNAL_ERROR:
+            case Severity::kERROR:
+            case Severity::kWARNING:
+                std::cout << msg << std::endl;
+                break;
+            case Severity::kINFO:
+            case Severity::kVERBOSE:
+                // Optionally ignore or handle less severe messages
+                break;
+        }
+    }
+} gLogger;
+
+#define CHECK(status) \
+    if (status != 0) \
+    { \
+        std::cerr << "Cuda failure: " << status << std::endl; \
+        abort(); \
+    }
+
+// ------------------ 以下全是你原先的函数，无任何删减 ------------------
+
+std::pair<nvinfer1::ICudaEngine*, nvinfer1::IExecutionContext*> initializeTensorRTComponents(const std::string& engineFilePath) {
+    // 支持插件(scatterND)
+    bool didInitPlugins = initLibNvInferPlugins(nullptr, "");
+
+    // 读取序列化的引擎
+    auto engineData = readEngineFile(engineFilePath);
+
+    // 创建运行时和引擎
+    nvinfer1::IRuntime* runtime = nvinfer1::createInferRuntime(gLogger);
+    nvinfer1::ICudaEngine* engine = runtime->deserializeCudaEngine(engineData.data(), engineData.size(), nullptr);
+
+    // 创建执行上下文
+    nvinfer1::IExecutionContext* context = engine->createExecutionContext();
+    return {engine, context};
+}
+
+void trtInfer(std::vector<Voxel>& voxels, std::vector<std::vector<int>>& coors, std::vector<int>& num_points_per_voxel, 
+              int& max_points, nvinfer1::ICudaEngine* engine, nvinfer1::IExecutionContext* context, 
+              std::vector<float>& output)
+{
+    int inputPillarsIndex = engine->getBindingIndex("input_pillars");
+    int inputCoorsBatchIndex = engine->getBindingIndex("input_coors_batch");
+    int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar");
+    int outputIndex = engine->getBindingIndex("output_x");
+
+    int pillar_num = voxels.size();
+    void* inputPillarsDevice;
+    void* inputCoorsBatchDevice;
+    void* inputNpointsPerPillarDevice;
+    CHECK(cudaMalloc(&inputPillarsDevice, pillar_num * max_points * sizeof(Point)));
+    CHECK(cudaMalloc(&inputCoorsBatchDevice, pillar_num * 4 * sizeof(int)));
+    CHECK(cudaMalloc(&inputNpointsPerPillarDevice, pillar_num * sizeof(int)));
+
+    // 分配临时主机内存
+    Point* tempHostMemoryPillar = new Point[pillar_num * max_points];
+    Point* currentHostPtrPillar = tempHostMemoryPillar;
+    for (const auto& voxel : voxels) {
+        memcpy(currentHostPtrPillar, voxel.points.data(), voxel.points.size() * sizeof(Point));
+        currentHostPtrPillar += voxel.points.size();
+    }
+    
+    int* tempHostMemoryCoor = new int[pillar_num * 4];
+    int* currentHostPtrCoor = tempHostMemoryCoor;
+    for (const auto& coor : coors) {
+        memcpy(currentHostPtrCoor, coor.data(), coor.size() * sizeof(int));
+        currentHostPtrCoor += coor.size();
+    }
+
+    CHECK(cudaMemcpy(inputPillarsDevice, tempHostMemoryPillar, pillar_num * max_points * sizeof(Point), cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(inputCoorsBatchDevice, tempHostMemoryCoor, pillar_num * 4 * sizeof(int), cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(inputNpointsPerPillarDevice, num_points_per_voxel.data(), pillar_num * sizeof(int), cudaMemcpyHostToDevice));
+    delete[] tempHostMemoryPillar;
+    delete[] tempHostMemoryCoor;
+
+    void* outputDevice;
+    CHECK(cudaMalloc(&outputDevice, output.size() * sizeof(float))); 
+
+    nvinfer1::Dims inputPilllarDims, inputCoorsDims, inputNpointsPerPillarDims;
+    inputPilllarDims.nbDims = 3;
+    inputPilllarDims.d[0] = pillar_num;
+    inputPilllarDims.d[1] = max_points;
+    inputPilllarDims.d[2] = sizeof(Point) / sizeof(float);
+
+    inputCoorsDims.nbDims = 2;
+    inputCoorsDims.d[0] = pillar_num;
+    inputCoorsDims.d[1] = 4;
+
+    inputNpointsPerPillarDims.nbDims = 1;
+    inputNpointsPerPillarDims.d[0] = pillar_num;
+
+    if (!context->setBindingDimensions(inputPillarsIndex, inputPilllarDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+    if (!context->setBindingDimensions(inputCoorsBatchIndex, inputCoorsDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+    if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+
+    void* buffers[4];
+    buffers[inputPillarsIndex] = inputPillarsDevice;
+    buffers[inputCoorsBatchIndex] = inputCoorsBatchDevice;
+    buffers[inputNpointsPerPillarIndex] = inputNpointsPerPillarDevice;
+    buffers[outputIndex] = outputDevice;
+
+    context->enqueueV2(buffers, 0, nullptr);
+
+    cudaMemcpy(output.data(), outputDevice, output.size() * sizeof(float), cudaMemcpyDeviceToHost);
+
+    cudaFree(inputPillarsDevice);
+    cudaFree(inputCoorsBatchDevice);
+    cudaFree(inputNpointsPerPillarDevice);
+    cudaFree(outputDevice);
+}
+
+void trtInfer(float* d_voxels, int* d_coors, int* d_num_points_per_voxel, const int pillar_num,
+              int& max_points, nvinfer1::ICudaEngine* engine, nvinfer1::IExecutionContext* context, 
+              std::vector<float>& output)
+{
+    int inputPillarsIndex = engine->getBindingIndex("input_pillars");
+    int inputCoorsBatchIndex = engine->getBindingIndex("input_coors_batch");
+    int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar");
+    int outputIndex = engine->getBindingIndex("output_x");
+
+    void* inputPillarsDevice;
+    void* inputCoorsBatchDevice;
+    void* inputNpointsPerPillarDevice;
+    CHECK(cudaMalloc(&inputPillarsDevice, pillar_num * max_points * sizeof(Point)));
+    CHECK(cudaMalloc(&inputCoorsBatchDevice, pillar_num * 4 * sizeof(int)));
+    CHECK(cudaMalloc(&inputNpointsPerPillarDevice, pillar_num * sizeof(int)));
+
+    CHECK(cudaMemcpy(inputPillarsDevice, d_voxels, pillar_num * max_points * sizeof(Point), cudaMemcpyDeviceToDevice));
+    CHECK(cudaMemcpy(inputCoorsBatchDevice, d_coors, pillar_num * 4 * sizeof(int), cudaMemcpyDeviceToDevice));
+    CHECK(cudaMemcpy(inputNpointsPerPillarDevice, d_num_points_per_voxel, pillar_num * sizeof(int), cudaMemcpyDeviceToDevice));
+    cudaFree(d_voxels);
+    cudaFree(d_coors);
+    cudaFree(d_num_points_per_voxel);
+
+    void* outputDevice;
+    CHECK(cudaMalloc(&outputDevice, output.size() * sizeof(float)));
+
+    nvinfer1::Dims inputPilllarDims, inputCoorsDims, inputNpointsPerPillarDims;
+    inputPilllarDims.nbDims = 3;
+    inputPilllarDims.d[0] = pillar_num;
+    inputPilllarDims.d[1] = max_points;
+    inputPilllarDims.d[2] = sizeof(Point) / sizeof(float);
+
+    inputCoorsDims.nbDims = 2;
+    inputCoorsDims.d[0] = pillar_num;
+    inputCoorsDims.d[1] = 4;
+
+    inputNpointsPerPillarDims.nbDims = 1;
+    inputNpointsPerPillarDims.d[0] = pillar_num;
+
+    if (!context->setBindingDimensions(inputPillarsIndex, inputPilllarDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+    if (!context->setBindingDimensions(inputCoorsBatchIndex, inputCoorsDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+    if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims)) {
+        std::cout << "setBindingDimensions error \n";
+    }
+
+    void* buffers[4];
+    buffers[inputPillarsIndex] = inputPillarsDevice;
+    buffers[inputCoorsBatchIndex] = inputCoorsBatchDevice;
+    buffers[inputNpointsPerPillarIndex] = inputNpointsPerPillarDevice;
+    buffers[outputIndex] = outputDevice;
+
+    context->enqueueV2(buffers, 0, nullptr);
+    cudaMemcpy(output.data(), outputDevice, output.size() * sizeof(float), cudaMemcpyDeviceToHost);
+
+    cudaFree(inputPillarsDevice);
+    cudaFree(inputCoorsBatchDevice);
+    cudaFree(inputNpointsPerPillarDevice);
+    cudaFree(outputDevice);
+}
+
+void postProcessing(std::vector<float>& output, int& num_class, float& nms_thr, float& score_thr, 
+                    int& max_num, std::vector<Box3dfull>& bboxes_full)
+{
+    std::vector<Box2d> bboxes_2d;
+    std::vector<Box3d> bboxes_3d;
+    std::vector<std::vector<float>> scores_list;
+    std::vector<float> direction_list;
+    decodeDetResults(output, num_class, bboxes_2d, bboxes_3d, scores_list, direction_list);
+
+    std::vector<Box3dfull> bboxes_3d_nms;
+    for (int i = 0; i < num_class; i++){
+        std::vector<int> score_filter_inds;
+        std::vector<float> scores;
+        filterByScores(i, scores_list, score_thr, score_filter_inds, scores);
+        std::vector<Box2d> bboxes_2d_filtered;
+        std::vector<Box3d> bboxes_3d_filtered;
+        std::vector<float> direction_filtered;
+        obtainBoxByInds(score_filter_inds, bboxes_2d, bboxes_2d_filtered, bboxes_3d, bboxes_3d_filtered, 
+                        direction_list, direction_filtered);
+        
+        std::vector<int> nms_filter_inds;
+        nms(bboxes_2d_filtered, scores, nms_thr, nms_filter_inds);
+
+        for (const auto ind : nms_filter_inds){
+            Box3dfull box3d_full;
+            box3d_full.x = bboxes_3d_filtered[ind].x;
+            box3d_full.y = bboxes_3d_filtered[ind].y;
+            box3d_full.z = bboxes_3d_filtered[ind].z;
+            box3d_full.w = bboxes_3d_filtered[ind].w;
+            box3d_full.l = bboxes_3d_filtered[ind].l;
+            box3d_full.h = bboxes_3d_filtered[ind].h;
+            float limited_theta = limitPeriod(bboxes_3d_filtered[ind].theta);
+            box3d_full.theta = (1.f - direction_filtered[ind]) * M_PI + limited_theta;
+            box3d_full.score = scores[ind];
+            box3d_full.label = i;
+            bboxes_3d_nms.push_back(box3d_full);
+        }
+    }
+    getTopkBoxes(bboxes_3d_nms, max_num, bboxes_full);
+}
+
+void runTime(std::vector<Point>& points, int& test_number, nvinfer1::ICudaEngine* engine, 
+             nvinfer1::IExecutionContext* context, const int NDim)
+{
+    std::vector<float> voxel_size = {0.16, 0.16, 4};
+    std::vector<float> coors_range = {0, -39.68, -3, 69.12, 39.68, 1};
+    int max_points = 32;
+    int max_voxels = 40000;
+    int num_class = 3, num_box = 100;
+    float nms_thr = 0.01, score_thr = 0.1;
+    int max_num = 50;
+    
+    std::chrono::duration<double, std::milli> voxelization_time(0);
+    std::chrono::duration<double, std::milli> inference_time(0);
+    std::chrono::duration<double, std::milli> post_processing_time(0);
+    std::chrono::duration<double, std::milli> total_time(0);
+    
+    auto start_total = std::chrono::high_resolution_clock::now(); 
+    for (int i = 0; i < test_number; i++){
+        int* d_num_points_per_voxel = nullptr;
+        cudaMalloc((void**)&d_num_points_per_voxel, max_voxels * sizeof(int));
+        cudaMemset(d_num_points_per_voxel, 0, max_voxels * sizeof(int));
+        float* d_voxels = nullptr;
+        cudaMalloc((void**)&d_voxels, max_voxels * max_points * sizeof(Point));
+        cudaMemset(d_voxels, 0.f, max_voxels * max_points * sizeof(Point));
+        int* d_coors = nullptr;
+        cudaMalloc((void**)&d_coors, max_voxels * NDim * sizeof(int));
+        cudaMemset(d_coors, 0, max_voxels * NDim * sizeof(int));
+        
+        // 1. voxelization
+        auto start_voxelization = std::chrono::high_resolution_clock::now();
+        int voxel_num = voxelizeGpu(points, voxel_size, coors_range, max_points, max_voxels, d_voxels, d_coors, d_num_points_per_voxel, NDim);
+        int* d_coors_padded = nullptr;
+        cudaMalloc((void**)&d_coors_padded, voxel_num * (NDim + 1) * sizeof(int));
+        cudaMemset(d_coors_padded, 0, voxel_num * (NDim + 1) * sizeof(int));
+        padCoorsGPU(d_coors, d_coors_padded, voxel_num);
+        cudaFree(d_coors);
+        auto end_voxelization = std::chrono::high_resolution_clock::now();
+        voxelization_time += std::chrono::duration_cast<std::chrono::milliseconds>(end_voxelization - start_voxelization);
+        
+        // 2. trt inference
+        auto start_inference = std::chrono::high_resolution_clock::now();
+        std::vector<float> output(num_box * (7 + num_class + 1));
+        trtInfer(d_voxels, d_coors_padded, d_num_points_per_voxel, voxel_num, max_points, engine, context, output);
+        auto end_inference = std::chrono::high_resolution_clock::now();
+        inference_time += std::chrono::duration_cast<std::chrono::milliseconds>(end_inference - start_inference);
+        
+        // 3. post processing
+        auto start_post_processing = std::chrono::high_resolution_clock::now();
+        std::vector<Box3dfull> bboxes;
+        postProcessing(output, num_class, nms_thr, score_thr, max_num, bboxes);
+        auto end_post_processing = std::chrono::high_resolution_clock::now();
+        post_processing_time += std::chrono::duration_cast<std::chrono::milliseconds>(end_post_processing - start_post_processing);
+    }
+    auto end_total = std::chrono::high_resolution_clock::now(); 
+    total_time += std::chrono::duration_cast<std::chrono::milliseconds>(end_total - start_total);
+    
+    double avg_voxelization_time = voxelization_time.count() / test_number;
+    double avg_inference_time = inference_time.count() / test_number;
+    double avg_post_processing_time = post_processing_time.count() / test_number;
+    double avg_total_time = total_time.count() / test_number; 
+    
+    std::cout << "Average voxelization time: " << avg_voxelization_time << " ms" << std::endl;
+    std::cout << "Average inference time: " << avg_inference_time << " ms" << std::endl;
+    std::cout << "Average post processing time: " << avg_post_processing_time << " ms" << std::endl;
+    std::cout << "Average total time for loop: " << avg_total_time << " ms" << std::endl; 
+}
+
+// ------------------ 新增：ROS2 Node 封装 ------------------
+class TrtInferNode : public rclcpp::Node
+{
+public:
+    TrtInferNode() : Node("trt_infer_node")
+    {
+        // 声明并获取两个字符串参数：point_cloud_path 和 trt_path
+        this->declare_parameter<std::string>("point_cloud_path", "");
+        this->declare_parameter<std::string>("trt_path", "");
+
+        file_path_ = this->get_parameter("point_cloud_path").as_string();
+        trt_path_  = this->get_parameter("trt_path").as_string();
+
+        // 如果参数为空，则报错并退出
+        if (file_path_.empty() || trt_path_.empty()) {
+            RCLCPP_ERROR(this->get_logger(), 
+                "Must set parameter 'point_cloud_path' and 'trt_path'. Example:\n"
+                "  ros2 run lidar_detection trt_infer_node --ros-args "
+                "-p point_cloud_path:=/path/to/xxx.bin "
+                "-p trt_path:=/path/to/model.trt");
+            return;
+        }
+
+        // 创建一个发布者用于发布检测结果（这里以std_msgs::msg::String作为示例）
+        result_pub_ = this->create_publisher<std_msgs::msg::String>("detection_results", 10);
+
+        // 执行原先的流程
+        runPipeline();
+    }
+
+private:
+    // 这里把原先 main 的逻辑抽取到一个函数
+    void runPipeline()
+    {
+        // 0. read data
+        std::vector<Point> points_ori, points; 
+        bool read_data_ok = readPoints(file_path_, points_ori);
+        if (!read_data_ok) {
+            RCLCPP_ERROR(this->get_logger(), "readPoints failed: %s", file_path_.c_str());
+            return;
+        }
+        pointCloudFiler(points_ori, points);
+
+        std::vector<float> voxel_size = {0.16, 0.16, 4};
+        std::vector<float> coors_range = {0, -39.68, -3, 69.12, 39.68, 1};
+        int max_points = 32;
+        int max_voxels = 40000;
+        int NDim = 3;
+
+        int* d_num_points_per_voxel = nullptr;
+        cudaMalloc((void**)&d_num_points_per_voxel, max_voxels * sizeof(int));
+        cudaMemset(d_num_points_per_voxel, 0, max_voxels * sizeof(int));
+        float* d_voxels = nullptr;
+        cudaMalloc((void**)&d_voxels, max_voxels * max_points * sizeof(Point));
+        cudaMemset(d_voxels, 0.f, max_voxels * max_points * sizeof(Point));
+        int* d_coors = nullptr;
+        cudaMalloc((void**)&d_coors, max_voxels * NDim * sizeof(int));
+        cudaMemset(d_coors, 0, max_voxels * NDim * sizeof(int));
+
+        // 1. voxelization
+        int voxel_num = voxelizeGpu(points, voxel_size, coors_range, max_points, max_voxels,
+                                    d_voxels, d_coors, d_num_points_per_voxel, NDim);
+        int* d_coors_padded = nullptr;
+        cudaMalloc((void**)&d_coors_padded, voxel_num * (NDim + 1) * sizeof(int));
+        cudaMemset(d_coors_padded, 0, voxel_num * (NDim + 1) * sizeof(int));
+        padCoorsGPU(d_coors, d_coors_padded, voxel_num);
+        cudaFree(d_coors);
+
+        // 2. trt inference
+        int num_class = 3, num_box = 100;
+        std::vector<float> output(num_box * (7 + num_class + 1));
+        auto components = initializeTensorRTComponents(trt_path_);
+        nvinfer1::ICudaEngine* engine = components.first;
+        nvinfer1::IExecutionContext* context = components.second;
+        trtInfer(d_voxels, d_coors_padded, d_num_points_per_voxel, voxel_num, max_points, engine, context, output);
+
+        // 3. post processing
+        float nms_thr = 0.01, score_thr = 0.1;
+        int max_num = 50;
+        std::vector<Box3dfull> bboxes;
+        postProcessing(output, num_class, nms_thr, score_thr, max_num, bboxes);
+
+        // 4. 发布检测结果到 ROS2 话题，而不写文件
+        std_msgs::msg::String result_msg;
+        std::ostringstream oss;
+        oss << "Detected " << bboxes.size() << " boxes:\n";
+        for (const auto& box : bboxes) {
+            oss << "Box: x=" << box.x << " y=" << box.y << " z=" << box.z 
+                << " score=" << box.score << " label=" << box.label << "\n";
+        }
+        result_msg.data = oss.str();
+        result_pub_->publish(result_msg);
+
+        // 5. runtime 
+        int test_number = 100;
+        runTime(points, test_number, engine, context, NDim);
+
+        // 释放 TRT 资源
+        context->destroy();
+        engine->destroy();
+
+        RCLCPP_INFO(this->get_logger(), "All done. Detection results published on topic 'detection_results'.");
+    }
+
+    // 存储参数
+    std::string file_path_;
+    std::string trt_path_;
+
+    // ROS2 Publisher 用于发布检测结果
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr result_pub_;
+};
+
+// ------------------ 新的 main 函数：ROS2 风格 ------------------
+int main(int argc, char *argv[])
+{
+    rclcpp::init(argc, argv);
+
+    auto node = std::make_shared<TrtInferNode>();
+
+    // 这里使用 spin_some()，因为整个流程在构造时已经运行完毕
+    rclcpp::spin_some(node);
+
+    rclcpp::shutdown();
+    return 0;
+}
