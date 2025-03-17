@@ -1,3 +1,8 @@
+**# 环境相关**
+
+如果使用conda安装过虚拟环境，可以使用conda deactivate，在无conda环境下编译
+
+
 **catkin_pkg
 使用conda 安装**
 

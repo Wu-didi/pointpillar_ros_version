@@ -432,7 +432,7 @@ std::vector<Box3dfull> doOneInference(const std::vector<Point> &points,
     // 4) TRT推理
     int num_class = 3;
     int num_box   = 100;
-    std::vector<float>   (num_box*(7+num_class+1));
+    std::vector<float>   output(num_box*(7+num_class+1));
     // 这里用 GPU指针版本:
     trtInfer(d_voxels, d_coors_padded, d_num_points_per_voxel,
              voxel_num, max_points, engine, context, output);
