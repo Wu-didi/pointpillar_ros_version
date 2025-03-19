@@ -1,0 +1,22 @@
+[35m[1mScanning dependencies of target trt_infer_node[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/trt_infer_node.cpp.o[0m
+[ 33%] [32m[1mLinking CXX executable trt_infer_node[0m
+[100%] Built target trt_infer_node
+-- Install configuration: ""
+-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node
+-- Set runtime path of "/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node" to ""
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/package_run_dependencies/lidar_detection
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/parent_prefix_path/lidar_detection
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.sh
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.sh
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.dsv
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.bash
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.sh
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.zsh
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.dsv
+-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.dsv
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/packages/lidar_detection
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig.cmake
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig-version.cmake
+-- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.xml

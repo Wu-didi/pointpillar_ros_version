@@ -1,0 +1,447 @@
+[0.000000] (-) TimerEvent: {}
+[0.000116] (lidar_detection) JobQueued: {'identifier': 'lidar_detection', 'dependencies': OrderedDict()}
+[0.000481] (lidar_detection) JobStarted: {'identifier': 'lidar_detection'}
+[0.005967] (lidar_detection) JobProgress: {'identifier': 'lidar_detection', 'progress': 'cmake'}
+[0.006323] (lidar_detection) Command: {'cmd': ['/usr/bin/cmake', '/home/wudi/learn_tensorrt/pointpillar_ros_version', '-DCMAKE_INSTALL_PREFIX=/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection'], 'cwd': '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('C_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'wudi'), ('SSH_CLIENT', '10.203.142.108 63866 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/home/wudi/TensorRT-8.5.1.7/lib:/home/wudi/TensorRT-8.5.1.7/'), ('BROWSER', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wudi'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50a5fffa-7ba5-4606-931a-b16b0ade8541.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('COLCON_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'wudi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/wudi/.local/bin:/home/wudi/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin:/home/wudi/.local/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('TensorRT_Lib', '/home/wudi/TensorRT-8.5.1.7/lib'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-5f6ed14140.sock'), ('TERM_PROGRAM', 'vscode'), ('TensorRT_Inc', '/home/wudi/TensorRT-8.5.1.7/include'), ('AMENT_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy'), ('CONDA_PYTHON_EXE', '/home/wudi/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection'), ('CUDA_HOME', '/usr/local/cuda-11.6'), ('CONDA_EXE', '/home/wudi/anaconda3/bin/conda'), ('SSH_CONNECTION', '10.203.142.108 63866 10.201.139.20 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages::/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CUDA_PATH', '/usr/local/cuda-11.6'), ('CMAKE_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy')]), 'shell': False}
+[0.049720] (lidar_detection) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.099786] (-) TimerEvent: {}
+[0.200055] (-) TimerEvent: {}
+[0.300346] (-) TimerEvent: {}
+[0.389081] (lidar_detection) StdoutLine: {'line': b'-- The CUDA compiler identification is NVIDIA 11.6.124\n'}
+[0.393757] (lidar_detection) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[0.400452] (-) TimerEvent: {}
+[0.445682] (lidar_detection) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[0.446232] (lidar_detection) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.500560] (-) TimerEvent: {}
+[0.502090] (lidar_detection) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.510257] (lidar_detection) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.510587] (lidar_detection) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.511929] (lidar_detection) StdoutLine: {'line': b'-- Check for working CUDA compiler: /usr/local/cuda-11.6/bin/nvcc\n'}
+[0.600668] (-) TimerEvent: {}
+[0.700997] (-) TimerEvent: {}
+[0.801279] (-) TimerEvent: {}
+[0.844573] (lidar_detection) StdoutLine: {'line': b'-- Check for working CUDA compiler: /usr/local/cuda-11.6/bin/nvcc -- works\n'}
+[0.845802] (lidar_detection) StdoutLine: {'line': b'-- Detecting CUDA compiler ABI info\n'}
+[0.901403] (-) TimerEvent: {}
+[1.001646] (-) TimerEvent: {}
+[1.101890] (-) TimerEvent: {}
+[1.170209] (lidar_detection) StdoutLine: {'line': b'-- Detecting CUDA compiler ABI info - done\n'}
+[1.188364] (lidar_detection) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[1.202016] (-) TimerEvent: {}
+[1.204480] (lidar_detection) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[1.204600] (lidar_detection) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.302127] (-) TimerEvent: {}
+[1.327915] (lidar_detection) StdoutLine: {'line': b'-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[1.353442] (lidar_detection) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.357037] (lidar_detection) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[1.402236] (-) TimerEvent: {}
+[1.405581] (lidar_detection) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[1.425385] (lidar_detection) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include  \n'}
+[1.475464] (lidar_detection) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.502368] (-) TimerEvent: {}
+[1.511096] (lidar_detection) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[1.511928] (lidar_detection) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_cyclonedds_cpp' as default\n"}
+[1.512466] (lidar_detection) StdoutLine: {'line': b'-- Looking for C++ include pthread.h\n'}
+[1.568782] (lidar_detection) StdoutLine: {'line': b'-- Looking for C++ include pthread.h - found\n'}
+[1.568944] (lidar_detection) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.602461] (-) TimerEvent: {}
+[1.624100] (lidar_detection) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[1.624293] (lidar_detection) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[1.669891] (lidar_detection) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[1.670044] (lidar_detection) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[1.702565] (-) TimerEvent: {}
+[1.725586] (lidar_detection) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[1.726370] (lidar_detection) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.802648] (-) TimerEvent: {}
+[1.821057] (lidar_detection) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[1.901443] (lidar_detection) StdoutLine: {'line': b'-- Found CUDA: /usr/local/cuda-11.6 (found version "11.6") \n'}
+[1.901903] (lidar_detection) StdoutLine: {'line': b'-- CUDA library status:\n'}
+[1.901964] (lidar_detection) StdoutLine: {'line': b'--     version: 11.6\n'}
+[1.902005] (lidar_detection) StdoutLine: {'line': b'--     libraries: /usr/local/cuda-11.6/lib64/libcudart_static.a;-lpthread;dl;/usr/lib/x86_64-linux-gnu/librt.so\n'}
+[1.902044] (lidar_detection) StdoutLine: {'line': b'--     include path: /usr/local/cuda-11.6/include\n'}
+[1.902723] (-) TimerEvent: {}
+[1.941161] (lidar_detection) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.947661] (lidar_detection) StdoutLine: {'line': b'-- Generating done\n'}
+[1.950906] (lidar_detection) StdoutLine: {'line': b'-- Build files have been written to: /home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection\n'}
+[1.956082] (lidar_detection) CommandEnded: {'returncode': 0}
+[1.957886] (lidar_detection) JobProgress: {'identifier': 'lidar_detection', 'progress': 'build'}
+[1.957950] (lidar_detection) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection', '--', '-j12', '-l12'], 'cwd': '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('C_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'wudi'), ('SSH_CLIENT', '10.203.142.108 63866 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/home/wudi/TensorRT-8.5.1.7/lib:/home/wudi/TensorRT-8.5.1.7/'), ('BROWSER', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wudi'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50a5fffa-7ba5-4606-931a-b16b0ade8541.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('COLCON_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'wudi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/wudi/.local/bin:/home/wudi/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin:/home/wudi/.local/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('TensorRT_Lib', '/home/wudi/TensorRT-8.5.1.7/lib'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-5f6ed14140.sock'), ('TERM_PROGRAM', 'vscode'), ('TensorRT_Inc', '/home/wudi/TensorRT-8.5.1.7/include'), ('AMENT_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy'), ('CONDA_PYTHON_EXE', '/home/wudi/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection'), ('CUDA_HOME', '/usr/local/cuda-11.6'), ('CONDA_EXE', '/home/wudi/anaconda3/bin/conda'), ('SSH_CONNECTION', '10.203.142.108 63866 10.201.139.20 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages::/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CUDA_PATH', '/usr/local/cuda-11.6'), ('CMAKE_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy')]), 'shell': False}
+[1.987307] (lidar_detection) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target trt_infer_node\x1b[0m\n'}
+[2.002874] (-) TimerEvent: {}
+[2.014393] (lidar_detection) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/trt_infer_node.cpp.o\x1b[0m\n'}
+[2.014604] (lidar_detection) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/src/utils.cpp.o\x1b[0m\n'}
+[2.014957] (lidar_detection) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/src/voxelization_trt.cpp.o\x1b[0m\n'}
+[2.015505] (lidar_detection) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/src/nms_trt.cpp.o\x1b[0m\n'}
+[2.015639] (lidar_detection) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CUDA object CMakeFiles/trt_infer_node.dir/src/trt_infer/src/voxelization_trt.cu.o\x1b[0m\n'}
+[2.102991] (-) TimerEvent: {}
+[2.203258] (-) TimerEvent: {}
+[2.303587] (-) TimerEvent: {}
+[2.403917] (-) TimerEvent: {}
+[2.504266] (-) TimerEvent: {}
+[2.604496] (-) TimerEvent: {}
+[2.704772] (-) TimerEvent: {}
+[2.805002] (-) TimerEvent: {}
+[2.905363] (-) TimerEvent: {}
+[2.968071] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.968224] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.968270] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.968311] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1161:104:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.968354] (lidar_detection) StderrLine: {'line': b' 1161 |     virtual IPluginV2* createPlugin(AsciiChar const* name, PluginFieldCollection const* fc) noexcept = \x1b[01;35m\x1b[K0\x1b[m\x1b[K;\n'}
+[2.968396] (lidar_detection) StderrLine: {'line': b'      |                                                                                                        \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.968436] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.968475] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.968516] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.968556] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1173:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.968598] (lidar_detection) StderrLine: {'line': b' 1173 |         = \x1b[01;35m\x1b[K0\x1b[m\x1b[K;\n'}
+[2.968678] (lidar_detection) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.968718] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.968756] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.968794] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.968831] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual bool nvinfer1::IGpuAllocator::deallocate(void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.968871] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1474:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvirtual void nvinfer1::IGpuAllocator::free(void*)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.968914] (lidar_detection) StderrLine: {'line': b' 1474 |         this->free(memory\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.968952] (lidar_detection) StderrLine: {'line': b'      |                          \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.968990] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1405:33:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.969029] (lidar_detection) StderrLine: {'line': b' 1405 |     TRT_DEPRECATED virtual void \x1b[01;36m\x1b[Kfree\x1b[m\x1b[K(void* const memory) noexcept = 0;\n'}
+[2.969068] (lidar_detection) StderrLine: {'line': b'      |                                 \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.972210] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:22\x1b[m\x1b[K,\n'}
+[2.972304] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[2.972347] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.972386] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:\x1b[m\x1b[K At global scope:\n'}
+[2.972423] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:616:47:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.972468] (lidar_detection) StderrLine: {'line': b'  616 |     virtual IPluginV2& getPlugin() noexcept = \x1b[01;35m\x1b[K0\x1b[m\x1b[K;\n'}
+[2.972505] (lidar_detection) StderrLine: {'line': b'      |                                               \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.972542] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.972578] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.972615] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.972651] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.972689] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.972725] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.973893] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:22\x1b[m\x1b[K,\n'}
+[2.973956] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[2.974000] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.974038] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:953:113:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.974075] (lidar_detection) StderrLine: {'line': b'  953 |     virtual IPluginV2Layer* addPluginV2(ITensor* const* inputs, int32_t nbInputs, IPluginV2& plugin) noexcept = \x1b[01;35m\x1b[K0\x1b[m\x1b[K;\n'}
+[2.974113] (lidar_detection) StderrLine: {'line': b'      |                                                                                                                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.974148] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.974183] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.974218] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.974252] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.974287] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.974329] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.984211] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.984305] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:3613:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.984358] (lidar_detection) StderrLine: {'line': b' 3613 |     IPluginV2& getPlugin() \x1b[01;35m\x1b[Knoexcept\x1b[m\x1b[K\n'}
+[2.984397] (lidar_detection) StderrLine: {'line': b'      |                            \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.984433] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.984472] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.984508] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.984545] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.984582] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.984618] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.988855] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.988928] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:6684:88:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIFullyConnectedLayer\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.988973] (lidar_detection) StderrLine: {'line': b' 6684 |         ITensor& input, int32_t nbOutputs, Weights kernelWeights, Weights biasWeights) \x1b[01;35m\x1b[Knoexcept\x1b[m\x1b[K\n'}
+[2.989013] (lidar_detection) StderrLine: {'line': b'      |                                                                                        \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.989051] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.989088] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:1484:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.989135] (lidar_detection) StderrLine: {'line': b' 1484 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIFullyConnectedLayer\x1b[m\x1b[K : public ILayer\n'}
+[2.989361] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.989410] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.989452] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:7259:101:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIRNNv2Layer\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.989492] (lidar_detection) StderrLine: {'line': b' 7259 |         ITensor& input, int32_t layerCount, int32_t hiddenSize, int32_t maxSeqLen, RNNOperation op) \x1b[01;35m\x1b[Knoexcept\x1b[m\x1b[K\n'}
+[2.989534] (lidar_detection) StderrLine: {'line': b'      |                                                                                                     \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.989571] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.989606] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:3315:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.989645] (lidar_detection) StderrLine: {'line': b' 3315 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIRNNv2Layer\x1b[m\x1b[K : public ILayer\n'}
+[2.989683] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.989717] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.989751] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:7319:94:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.989786] (lidar_detection) StderrLine: {'line': b' 7319 |     IPluginV2Layer* addPluginV2(ITensor* const* inputs, int32_t nbInputs, IPluginV2& plugin) \x1b[01;35m\x1b[Knoexcept\x1b[m\x1b[K\n'}
+[2.989821] (lidar_detection) StderrLine: {'line': b'      |                                                                                              \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.989857] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.989890] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.989924] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.989959] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.989993] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.990027] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.994290] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.994782] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:46:71:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.994833] (lidar_detection) StderrLine: {'line': b'   46 |         nvinfer1::Weights anchorRatios, nvinfer1::Weights anchorScales\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.994875] (lidar_detection) StderrLine: {'line': b'      |                                                                       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.994914] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.994952] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.994999] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.995039] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.995080] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.995119] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.995156] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.995194] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:61:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.995236] (lidar_detection) StderrLine: {'line': b'   61 |         nvinfer1::Weights const* scales, bool acrossSpatial, bool channelShared, float eps\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.995275] (lidar_detection) StderrLine: {'line': b'      |                                                                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.995313] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.995351] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.995388] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.995425] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.995463] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.995499] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.995532] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.995566] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:71:108:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.995600] (lidar_detection) StderrLine: {'line': b'   71 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createPriorBoxPlugin(nvinfer1::plugin::PriorBoxParameters param\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.995637] (lidar_detection) StderrLine: {'line': b'      |                                                                                                            \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.995671] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.995705] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.995739] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.995772] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.995807] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.995840] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.995874] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.995907] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:83:73:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.995945] (lidar_detection) StderrLine: {'line': b'   83 |         nvinfer1::plugin::GridAnchorParameters* param, int32_t numLayers\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.995982] (lidar_detection) StderrLine: {'line': b'      |                                                                         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.996017] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.996050] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.996084] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.996118] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.996152] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.996185] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.996218] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.996251] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:93:110:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.996286] (lidar_detection) StderrLine: {'line': b'   93 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createNMSPlugin(nvinfer1::plugin::DetectionOutputParameters param\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.996322] (lidar_detection) StderrLine: {'line': b'      |                                                                                                              \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.996357] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.996391] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.996425] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.996469] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.996510] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.996547] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.996584] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.996621] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:105:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.996659] (lidar_detection) StderrLine: {'line': b'  105 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createReorgPlugin(int32_t stride\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.996696] (lidar_detection) StderrLine: {'line': b'      |                                                                             \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.996734] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.996769] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.996809] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.996845] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.996882] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.996918] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.996952] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.996988] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:117:105:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.997023] (lidar_detection) StderrLine: {'line': b'  117 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createRegionPlugin(nvinfer1::plugin::RegionParameters params\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.997057] (lidar_detection) StderrLine: {'line': b'      |                                                                                                         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.997092] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.997126] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.997161] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.997195] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.997229] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.997263] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.997297] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.997337] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:151:105:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.997372] (lidar_detection) StderrLine: {'line': b'  151 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createBatchedNMSPlugin(nvinfer1::plugin::NMSParameters param\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.997406] (lidar_detection) StderrLine: {'line': b'      |                                                                                                         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.997441] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.997474] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.997508] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.997543] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.997579] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.997613] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.997647] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.997682] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:164:117:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.997718] (lidar_detection) StderrLine: {'line': b'  164 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createSplitPlugin(int32_t axis, int32_t* output_lengths, int32_t noutput\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.997753] (lidar_detection) StderrLine: {'line': b'      |                                                                                                                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.997787] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.997822] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.997856] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.997890] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.997925] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.997960] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.997995] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21\x1b[m\x1b[K:\n'}
+[2.998034] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:179:87:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KIPluginV2\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[2.998074] (lidar_detection) StderrLine: {'line': b'  179 |         float epsilon, nvinfer1::Weights scale_weights, nvinfer1::Weights bias_weights\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[2.998114] (lidar_detection) StderrLine: {'line': b'      |                                                                                       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.998151] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16\x1b[m\x1b[K,\n'}
+[2.998190] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16\x1b[m\x1b[K,\n'}
+[2.998228] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[2.998265] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.998304] (lidar_detection) StderrLine: {'line': b'  393 | class TRT_DEPRECATED \x1b[01;36m\x1b[KIPluginV2\x1b[m\x1b[K\n'}
+[2.998356] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.005505] (-) TimerEvent: {}
+[3.034735] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid trtInfer(float*, int*, int*, int, int&, nvinfer1::ICudaEngine*, nvinfer1::IExecutionContext*, std::vector<float>&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.034996] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:182:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.035046] (lidar_detection) StderrLine: {'line': b'  182 |     int inputPillarsIndex          = engine->getBindingIndex("input_pillars"\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.035086] (lidar_detection) StderrLine: {'line': b'      |                                                                             \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.035122] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.035164] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.035201] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.035240] (lidar_detection) StderrLine: {'line': b' 1427 |     TRT_DEPRECATED int32_t \x1b[01;36m\x1b[KgetBindingIndex\x1b[m\x1b[K(char const* name) const noexcept\n'}
+[3.035276] (lidar_detection) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.035312] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:183:81:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.035349] (lidar_detection) StderrLine: {'line': b'  183 |     int inputCoorsBatchIndex       = engine->getBindingIndex("input_coors_batch"\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.035385] (lidar_detection) StderrLine: {'line': b'      |                                                                                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.035421] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.035457] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.035493] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.035531] (lidar_detection) StderrLine: {'line': b' 1427 |     TRT_DEPRECATED int32_t \x1b[01;36m\x1b[KgetBindingIndex\x1b[m\x1b[K(char const* name) const noexcept\n'}
+[3.035567] (lidar_detection) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.035602] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:184:88:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.035639] (lidar_detection) StderrLine: {'line': b'  184 |     int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar"\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.035675] (lidar_detection) StderrLine: {'line': b'      |                                                                                        \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.035714] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.035749] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.035784] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.035822] (lidar_detection) StderrLine: {'line': b' 1427 |     TRT_DEPRECATED int32_t \x1b[01;36m\x1b[KgetBindingIndex\x1b[m\x1b[K(char const* name) const noexcept\n'}
+[3.035857] (lidar_detection) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.035892] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:185:72:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.035929] (lidar_detection) StderrLine: {'line': b'  185 |     int outputIndex                = engine->getBindingIndex("output_x"\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.035965] (lidar_detection) StderrLine: {'line': b'      |                                                                        \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.035999] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.036034] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.036068] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.036104] (lidar_detection) StderrLine: {'line': b' 1427 |     TRT_DEPRECATED int32_t \x1b[01;36m\x1b[KgetBindingIndex\x1b[m\x1b[K(char const* name) const noexcept\n'}
+[3.036140] (lidar_detection) StderrLine: {'line': b'      |                            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.036258] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:222:84:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.036331] (lidar_detection) StderrLine: {'line': b'  222 |     if (!context->setBindingDimensions(inputPillarsIndex,          inputPilllarDims\x1b[01;35m\x1b[K)\x1b[m\x1b[K) {\n'}
+[3.036374] (lidar_detection) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.036414] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.036452] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.036490] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.036696] (lidar_detection) StderrLine: {'line': b' 2549 |     TRT_DEPRECATED bool \x1b[01;36m\x1b[KsetBindingDimensions\x1b[m\x1b[K(int32_t bindingIndex, Dims dimensions) noexcept\n'}
+[3.036742] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.036784] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:225:82:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.036830] (lidar_detection) StderrLine: {'line': b'  225 |     if (!context->setBindingDimensions(inputCoorsBatchIndex,       inputCoorsDims\x1b[01;35m\x1b[K)\x1b[m\x1b[K) {\n'}
+[3.036872] (lidar_detection) StderrLine: {'line': b'      |                                                                                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.036908] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.036944] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.036979] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.037015] (lidar_detection) StderrLine: {'line': b' 2549 |     TRT_DEPRECATED bool \x1b[01;36m\x1b[KsetBindingDimensions\x1b[m\x1b[K(int32_t bindingIndex, Dims dimensions) noexcept\n'}
+[3.037053] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.037088] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:228:93:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.037125] (lidar_detection) StderrLine: {'line': b'  228 |     if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims\x1b[01;35m\x1b[K)\x1b[m\x1b[K) {\n'}
+[3.037160] (lidar_detection) StderrLine: {'line': b'      |                                                                                             \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.037194] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.037231] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.037266] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.037300] (lidar_detection) StderrLine: {'line': b' 2549 |     TRT_DEPRECATED bool \x1b[01;36m\x1b[KsetBindingDimensions\x1b[m\x1b[K(int32_t bindingIndex, Dims dimensions) noexcept\n'}
+[3.037335] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.037370] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:238:43:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kbool nvinfer1::IExecutionContext::enqueueV2(void* const*, cudaStream_t, CUevent_st**)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.037408] (lidar_detection) StderrLine: {'line': b'  238 |     context->enqueueV2(buffers, 0, nullptr\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.037443] (lidar_detection) StderrLine: {'line': b'      |                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.037477] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.037516] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.037550] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2812:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.037584] (lidar_detection) StderrLine: {'line': b' 2812 |     TRT_DEPRECATED bool \x1b[01;36m\x1b[KenqueueV2\x1b[m\x1b[K(void* const* bindings, cudaStream_t stream, cudaEvent_t* inputConsumed) noexcept\n'}
+[3.037618] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.047391] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kstd::pair<nvinfer1::ICudaEngine*, nvinfer1::IExecutionContext*> initializeTensorRTComponents(const string&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.047615] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:328:113:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knvinfer1::ICudaEngine* nvinfer1::IRuntime::deserializeCudaEngine(const void*, std::size_t, nvinfer1::IPluginFactory*)\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.047673] (lidar_detection) StderrLine: {'line': b'  328 |     nvinfer1::ICudaEngine* engine = runtime->deserializeCudaEngine(engineData.data(), engineData.size(), nullptr\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.047717] (lidar_detection) StderrLine: {'line': b'      |                                                                                                                 \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.047871] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.047925] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.047970] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:637:43:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.048013] (lidar_detection) StderrLine: {'line': b'  637 |     TRT_DEPRECATED nvinfer1::ICudaEngine* \x1b[01;36m\x1b[KdeserializeCudaEngine\x1b[m\x1b[K(\n'}
+[3.048056] (lidar_detection) StderrLine: {'line': b'      |                                           \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.048098] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:331:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::IRuntime::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.048143] (lidar_detection) StderrLine: {'line': b'  331 |         runtime->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K; // deprecated warning \xe5\x8f\xaf\xe6\x9a\x82\xe6\x97\xb6\xe5\xbf\xbd\xe7\x95\xa5\n'}
+[3.048187] (lidar_detection) StderrLine: {'line': b'      |                          \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.048229] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.048271] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.048313] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.048388] (lidar_detection) StderrLine: {'line': b'  682 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.048424] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.048459] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:338:25:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::ICudaEngine::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.048497] (lidar_detection) StderrLine: {'line': b'  338 |         engine->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.048532] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.048567] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.048601] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.048636] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1609:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.048671] (lidar_detection) StderrLine: {'line': b' 1609 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.048705] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.048739] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:339:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::IRuntime::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.048774] (lidar_detection) StderrLine: {'line': b'  339 |         runtime->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K;\n'}
+[3.048808] (lidar_detection) StderrLine: {'line': b'      |                          \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.048842] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.048876] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.048911] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.048945] (lidar_detection) StderrLine: {'line': b'  682 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.048979] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.049013] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:343:22:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::IRuntime::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.049048] (lidar_detection) StderrLine: {'line': b'  343 |     runtime->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K; // \xe9\x87\x8a\xe6\x94\xberuntime(\xe8\x8b\xa5\xe4\xb8\x8d\xe9\x9c\x80\xe9\x87\x8d\xe5\xa4\x8d\xe5\x8a\xa0\xe8\xbd\xbd)\n'}
+[3.049084] (lidar_detection) StderrLine: {'line': b'      |                      \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.049118] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.049153] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.049190] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.049226] (lidar_detection) StderrLine: {'line': b'  682 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.049260] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.074637] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:\x1b[m\x1b[K In destructor \xe2\x80\x98\x1b[01m\x1b[Kvirtual TrtInferNode::~TrtInferNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.074782] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:490:43:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::IExecutionContext::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.074845] (lidar_detection) StderrLine: {'line': b'  490 |         if (context_) { context_->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K;  context_ = nullptr; }\n'}
+[3.074891] (lidar_detection) StderrLine: {'line': b'      |                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.074936] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.074980] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.075023] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2369:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.075066] (lidar_detection) StderrLine: {'line': b' 2369 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.075109] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.075151] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:491:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid nvinfer1::ICudaEngine::destroy()\x1b[m\x1b[K\xe2\x80\x99 is deprecated [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[3.075195] (lidar_detection) StderrLine: {'line': b'  491 |         if (engine_)  { engine_->destroy(\x1b[01;35m\x1b[K)\x1b[m\x1b[K;   engine_  = nullptr; }\n'}
+[3.075238] (lidar_detection) StderrLine: {'line': b'      |                                          \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[3.075281] (lidar_detection) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17\x1b[m\x1b[K,\n'}
+[3.075327] (lidar_detection) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19\x1b[m\x1b[K:\n'}
+[3.075373] (lidar_detection) StderrLine: {'line': b'\x1b[01m\x1b[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1609:25:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[3.075416] (lidar_detection) StderrLine: {'line': b' 1609 |     TRT_DEPRECATED void \x1b[01;36m\x1b[Kdestroy\x1b[m\x1b[K() noexcept\n'}
+[3.075457] (lidar_detection) StderrLine: {'line': b'      |                         \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[3.105630] (-) TimerEvent: {}
+[3.205870] (-) TimerEvent: {}
+[3.306113] (-) TimerEvent: {}
+[3.406430] (-) TimerEvent: {}
+[3.506688] (-) TimerEvent: {}
+[3.606945] (-) TimerEvent: {}
+[3.707207] (-) TimerEvent: {}
+[3.807485] (-) TimerEvent: {}
+[3.907777] (-) TimerEvent: {}
+[4.008003] (-) TimerEvent: {}
+[4.108264] (-) TimerEvent: {}
+[4.208514] (-) TimerEvent: {}
+[4.308794] (-) TimerEvent: {}
+[4.409080] (-) TimerEvent: {}
+[4.509325] (-) TimerEvent: {}
+[4.609577] (-) TimerEvent: {}
+[4.709843] (-) TimerEvent: {}
+[4.810108] (-) TimerEvent: {}
+[4.910361] (-) TimerEvent: {}
+[5.010586] (-) TimerEvent: {}
+[5.110835] (-) TimerEvent: {}
+[5.211081] (-) TimerEvent: {}
+[5.311339] (-) TimerEvent: {}
+[5.411594] (-) TimerEvent: {}
+[5.511860] (-) TimerEvent: {}
+[5.612114] (-) TimerEvent: {}
+[5.712347] (-) TimerEvent: {}
+[5.782677] (lidar_detection) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable trt_infer_node\x1b[0m\n'}
+[5.812448] (-) TimerEvent: {}
+[5.912789] (-) TimerEvent: {}
+[5.976083] (lidar_detection) StdoutLine: {'line': b'[100%] Built target trt_infer_node\n'}
+[5.983090] (lidar_detection) CommandEnded: {'returncode': 0}
+[5.983500] (lidar_detection) JobProgress: {'identifier': 'lidar_detection', 'progress': 'install'}
+[5.990582] (lidar_detection) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection'], 'cwd': '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('C_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'wudi'), ('SSH_CLIENT', '10.203.142.108 63866 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.6/lib64:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/home/wudi/TensorRT-8.5.1.7/lib:/home/wudi/TensorRT-8.5.1.7/'), ('BROWSER', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/wudi'), ('CONDA_SHLVL', '0'), ('TERM_PROGRAM_VERSION', '1.93.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-50a5fffa-7ba5-4606-931a-b16b0ade8541.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('CPLUS_INCLUDE_PATH', '/usr/local/cuda-11.6/include:/usr/local/cuda-11.6/include:'), ('COLCON_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'wudi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/wudi/.vscode-server/cli/servers/Stable-38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40/server/bin/remote-cli:/home/wudi/.local/bin:/home/wudi/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin:/home/wudi/.local/bin:/usr/local/cuda-11.6/lib64:/usr/local/cuda/extras/CPUTI/lib64:/usr/local/cuda-11.6/bin:/usr/local/cuda-11.6/bin:/home/wudi/.local/bin:/home/wudi/TensorRT-8.5.1.7/bin'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('TensorRT_Lib', '/home/wudi/TensorRT-8.5.1.7/lib'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-5f6ed14140.sock'), ('TERM_PROGRAM', 'vscode'), ('TensorRT_Inc', '/home/wudi/TensorRT-8.5.1.7/include'), ('AMENT_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy'), ('CONDA_PYTHON_EXE', '/home/wudi/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection'), ('CUDA_HOME', '/usr/local/cuda-11.6'), ('CONDA_EXE', '/home/wudi/anaconda3/bin/conda'), ('SSH_CONNECTION', '10.203.142.108 63866 10.201.139.20 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages::/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla:/home/wudi/python_files/end2end/CARLA-SB3-RL-Training-Environment/carla/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CUDA_PATH', '/usr/local/cuda-11.6'), ('CMAKE_PREFIX_PATH', '/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection:/opt/ros/foxy')]), 'shell': False}
+[5.998513] (lidar_detection) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.998765] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node\n'}
+[6.000883] (lidar_detection) StdoutLine: {'line': b'-- Set runtime path of "/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node" to ""\n'}
+[6.001012] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/package_run_dependencies/lidar_detection\n'}
+[6.001153] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/parent_prefix_path/lidar_detection\n'}
+[6.001295] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.sh\n'}
+[6.001403] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.dsv\n'}
+[6.001506] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.sh\n'}
+[6.001603] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.dsv\n'}
+[6.001697] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.bash\n'}
+[6.001799] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.sh\n'}
+[6.001909] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.zsh\n'}
+[6.002016] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.dsv\n'}
+[6.002123] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.dsv\n'}
+[6.002223] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/packages/lidar_detection\n'}
+[6.002305] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig.cmake\n'}
+[6.002432] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig-version.cmake\n'}
+[6.002472] (lidar_detection) StdoutLine: {'line': b'-- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.xml\n'}
+[6.003631] (lidar_detection) CommandEnded: {'returncode': 0}
+[6.012970] (-) TimerEvent: {}
+[6.018794] (lidar_detection) JobEnded: {'identifier': 'lidar_detection', 'rc': 0}
+[6.019503] (-) EventReactorShutdown: {}

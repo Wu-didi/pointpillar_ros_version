@@ -1,0 +1,332 @@
+[0.009s] Invoking command in '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection -- -j12 -l12
+[0.049s] [35m[1mScanning dependencies of target trt_infer_node[0m
+[0.071s] [ 16%] [32mBuilding CXX object CMakeFiles/trt_infer_node.dir/src/trt_infer/trt_infer_node.cpp.o[0m
+[1.016s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.016s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.016s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.016s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1161:104:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.016s]  1161 |     virtual IPluginV2* createPlugin(AsciiChar const* name, PluginFieldCollection const* fc) noexcept = [01;35m[K0[m[K;
+[1.016s]       |                                                                                                        [01;35m[K^[m[K
+[1.016s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.017s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.017s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.017s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1173:11:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.017s]  1173 |         = [01;35m[K0[m[K;
+[1.017s]       |           [01;35m[K^[m[K
+[1.017s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.017s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.017s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.017s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:[m[K In member function ‘[01m[Kvirtual bool nvinfer1::IGpuAllocator::deallocate(void*)[m[K’:
+[1.017s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1474:26:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvirtual void nvinfer1::IGpuAllocator::free(void*)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.017s]  1474 |         this->free(memory[01;35m[K)[m[K;
+[1.017s]       |                          [01;35m[K^[m[K
+[1.017s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:1405:33:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.017s]  1405 |     TRT_DEPRECATED virtual void [01;36m[Kfree[m[K(void* const memory) noexcept = 0;
+[1.017s]       |                                 [01;36m[K^~~~[m[K
+[1.020s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:22[m[K,
+[1.020s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.020s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.020s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:[m[K At global scope:
+[1.020s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:616:47:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.020s]   616 |     virtual IPluginV2& getPlugin() noexcept = [01;35m[K0[m[K;
+[1.020s]       |                                               [01;35m[K^[m[K
+[1.020s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.020s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.020s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.020s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.020s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.020s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.022s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:22[m[K,
+[1.022s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.022s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.022s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferImpl.h:953:113:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.022s]   953 |     virtual IPluginV2Layer* addPluginV2(ITensor* const* inputs, int32_t nbInputs, IPluginV2& plugin) noexcept = [01;35m[K0[m[K;
+[1.022s]       |                                                                                                                 [01;35m[K^[m[K
+[1.022s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.022s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.022s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.022s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.022s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.022s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.032s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.032s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:3613:28:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.032s]  3613 |     IPluginV2& getPlugin() [01;35m[Knoexcept[m[K
+[1.032s]       |                            [01;35m[K^~~~~~~~[m[K
+[1.032s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.032s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.032s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.032s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.032s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.032s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.036s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.036s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:6684:88:[m[K [01;35m[Kwarning: [m[K‘[01m[KIFullyConnectedLayer[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.036s]  6684 |         ITensor& input, int32_t nbOutputs, Weights kernelWeights, Weights biasWeights) [01;35m[Knoexcept[m[K
+[1.036s]       |                                                                                        [01;35m[K^~~~~~~~[m[K
+[1.036s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.036s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:1484:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.036s]  1484 | class TRT_DEPRECATED [01;36m[KIFullyConnectedLayer[m[K : public ILayer
+[1.036s]       |                      [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1.037s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.037s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:7259:101:[m[K [01;35m[Kwarning: [m[K‘[01m[KIRNNv2Layer[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.037s]  7259 |         ITensor& input, int32_t layerCount, int32_t hiddenSize, int32_t maxSeqLen, RNNOperation op) [01;35m[Knoexcept[m[K
+[1.037s]       |                                                                                                     [01;35m[K^~~~~~~~[m[K
+[1.037s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.037s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:3315:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.037s]  3315 | class TRT_DEPRECATED [01;36m[KIRNNv2Layer[m[K : public ILayer
+[1.037s]       |                      [01;36m[K^~~~~~~~~~~[m[K
+[1.037s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.037s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:7319:94:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.037s]  7319 |     IPluginV2Layer* addPluginV2(ITensor* const* inputs, int32_t nbInputs, IPluginV2& plugin) [01;35m[Knoexcept[m[K
+[1.037s]       |                                                                                              [01;35m[K^~~~~~~~[m[K
+[1.037s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.037s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.037s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.037s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.037s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.037s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.041s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.042s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:46:71:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.042s]    46 |         nvinfer1::Weights anchorRatios, nvinfer1::Weights anchorScales[01;35m[K)[m[K;
+[1.042s]       |                                                                       [01;35m[K^[m[K
+[1.042s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.042s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.042s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.042s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.042s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.042s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.042s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.042s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:61:91:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.042s]    61 |         nvinfer1::Weights const* scales, bool acrossSpatial, bool channelShared, float eps[01;35m[K)[m[K;
+[1.042s]       |                                                                                           [01;35m[K^[m[K
+[1.042s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.042s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.042s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.042s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.042s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.042s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.042s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.042s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:71:108:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.042s]    71 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createPriorBoxPlugin(nvinfer1::plugin::PriorBoxParameters param[01;35m[K)[m[K;
+[1.042s]       |                                                                                                            [01;35m[K^[m[K
+[1.042s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.042s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.043s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.043s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.043s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.043s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:83:73:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.043s]    83 |         nvinfer1::plugin::GridAnchorParameters* param, int32_t numLayers[01;35m[K)[m[K;
+[1.043s]       |                                                                         [01;35m[K^[m[K
+[1.043s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.043s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.043s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.043s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.043s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.043s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:93:110:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.043s]    93 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createNMSPlugin(nvinfer1::plugin::DetectionOutputParameters param[01;35m[K)[m[K;
+[1.043s]       |                                                                                                              [01;35m[K^[m[K
+[1.043s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.043s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.043s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.043s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.043s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.043s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.043s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:105:77:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.043s]   105 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createReorgPlugin(int32_t stride[01;35m[K)[m[K;
+[1.044s]       |                                                                             [01;35m[K^[m[K
+[1.044s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.044s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.044s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.044s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.044s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.044s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:117:105:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.044s]   117 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createRegionPlugin(nvinfer1::plugin::RegionParameters params[01;35m[K)[m[K;
+[1.044s]       |                                                                                                         [01;35m[K^[m[K
+[1.044s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.044s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.044s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.044s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.044s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.044s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:151:105:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.044s]   151 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createBatchedNMSPlugin(nvinfer1::plugin::NMSParameters param[01;35m[K)[m[K;
+[1.044s]       |                                                                                                         [01;35m[K^[m[K
+[1.044s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.044s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.044s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.044s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.044s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.044s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.045s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:164:117:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.045s]   164 |     TRT_DEPRECATED_API nvinfer1::IPluginV2* createSplitPlugin(int32_t axis, int32_t* output_lengths, int32_t noutput[01;35m[K)[m[K;
+[1.045s]       |                                                                                                                     [01;35m[K^[m[K
+[1.045s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.045s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.045s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.045s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.045s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.045s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.045s] In file included from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:21[m[K:
+[1.045s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferPlugin.h:179:87:[m[K [01;35m[Kwarning: [m[K‘[01m[KIPluginV2[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.045s]   179 |         float epsilon, nvinfer1::Weights scale_weights, nvinfer1::Weights bias_weights[01;35m[K)[m[K;
+[1.045s]       |                                                                                       [01;35m[K^[m[K
+[1.045s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferLegacyDims.h:16[m[K,
+[1.045s]                  from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:16[m[K,
+[1.045s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.045s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntimeCommon.h:393:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.045s]   393 | class TRT_DEPRECATED [01;36m[KIPluginV2[m[K
+[1.045s]       |                      [01;36m[K^~~~~~~~~[m[K
+[1.078s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:[m[K In function ‘[01m[Kvoid trtInfer(float*, int*, int*, int, int&, nvinfer1::ICudaEngine*, nvinfer1::IExecutionContext*, std::vector<float>&)[m[K’:
+[1.078s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:175:77:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.078s]   175 |     int inputPillarsIndex          = engine->getBindingIndex("input_pillars"[01;35m[K)[m[K;
+[1.078s]       |                                                                             [01;35m[K^[m[K
+[1.078s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.078s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.078s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.079s]  1427 |     TRT_DEPRECATED int32_t [01;36m[KgetBindingIndex[m[K(char const* name) const noexcept
+[1.079s]       |                            [01;36m[K^~~~~~~~~~~~~~~[m[K
+[1.079s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:176:81:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.079s]   176 |     int inputCoorsBatchIndex       = engine->getBindingIndex("input_coors_batch"[01;35m[K)[m[K;
+[1.079s]       |                                                                                 [01;35m[K^[m[K
+[1.079s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.079s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.079s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.079s]  1427 |     TRT_DEPRECATED int32_t [01;36m[KgetBindingIndex[m[K(char const* name) const noexcept
+[1.079s]       |                            [01;36m[K^~~~~~~~~~~~~~~[m[K
+[1.079s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:177:88:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.079s]   177 |     int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar"[01;35m[K)[m[K;
+[1.079s]       |                                                                                        [01;35m[K^[m[K
+[1.079s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.079s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.079s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.079s]  1427 |     TRT_DEPRECATED int32_t [01;36m[KgetBindingIndex[m[K(char const* name) const noexcept
+[1.079s]       |                            [01;36m[K^~~~~~~~~~~~~~~[m[K
+[1.079s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:178:72:[m[K [01;35m[Kwarning: [m[K‘[01m[Kint32_t nvinfer1::ICudaEngine::getBindingIndex(const char*) const[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.079s]   178 |     int outputIndex                = engine->getBindingIndex("output_x"[01;35m[K)[m[K;
+[1.079s]       |                                                                        [01;35m[K^[m[K
+[1.079s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.079s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.079s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1427:28:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.079s]  1427 |     TRT_DEPRECATED int32_t [01;36m[KgetBindingIndex[m[K(char const* name) const noexcept
+[1.080s]       |                            [01;36m[K^~~~~~~~~~~~~~~[m[K
+[1.080s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:215:84:[m[K [01;35m[Kwarning: [m[K‘[01m[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.080s]   215 |     if (!context->setBindingDimensions(inputPillarsIndex,          inputPilllarDims[01;35m[K)[m[K) {
+[1.080s]       |                                                                                    [01;35m[K^[m[K
+[1.080s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.080s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.080s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.080s]  2549 |     TRT_DEPRECATED bool [01;36m[KsetBindingDimensions[m[K(int32_t bindingIndex, Dims dimensions) noexcept
+[1.080s]       |                         [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1.080s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:218:82:[m[K [01;35m[Kwarning: [m[K‘[01m[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.080s]   218 |     if (!context->setBindingDimensions(inputCoorsBatchIndex,       inputCoorsDims[01;35m[K)[m[K) {
+[1.080s]       |                                                                                  [01;35m[K^[m[K
+[1.080s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.080s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.080s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.080s]  2549 |     TRT_DEPRECATED bool [01;36m[KsetBindingDimensions[m[K(int32_t bindingIndex, Dims dimensions) noexcept
+[1.080s]       |                         [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1.080s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:221:93:[m[K [01;35m[Kwarning: [m[K‘[01m[Kbool nvinfer1::IExecutionContext::setBindingDimensions(int32_t, nvinfer1::Dims)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.080s]   221 |     if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims[01;35m[K)[m[K) {
+[1.080s]       |                                                                                             [01;35m[K^[m[K
+[1.080s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.080s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.081s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2549:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.081s]  2549 |     TRT_DEPRECATED bool [01;36m[KsetBindingDimensions[m[K(int32_t bindingIndex, Dims dimensions) noexcept
+[1.081s]       |                         [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[1.081s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:231:43:[m[K [01;35m[Kwarning: [m[K‘[01m[Kbool nvinfer1::IExecutionContext::enqueueV2(void* const*, cudaStream_t, CUevent_st**)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.081s]   231 |     context->enqueueV2(buffers, 0, nullptr[01;35m[K)[m[K;
+[1.081s]       |                                           [01;35m[K^[m[K
+[1.081s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.081s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.081s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2812:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.081s]  2812 |     TRT_DEPRECATED bool [01;36m[KenqueueV2[m[K(void* const* bindings, cudaStream_t stream, cudaEvent_t* inputConsumed) noexcept
+[1.081s]       |                         [01;36m[K^~~~~~~~~[m[K
+[1.090s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:[m[K In function ‘[01m[Kstd::pair<nvinfer1::ICudaEngine*, nvinfer1::IExecutionContext*> initializeTensorRTComponents(const string&)[m[K’:
+[1.090s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:321:113:[m[K [01;35m[Kwarning: [m[K‘[01m[Knvinfer1::ICudaEngine* nvinfer1::IRuntime::deserializeCudaEngine(const void*, std::size_t, nvinfer1::IPluginFactory*)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.090s]   321 |     nvinfer1::ICudaEngine* engine = runtime->deserializeCudaEngine(engineData.data(), engineData.size(), nullptr[01;35m[K)[m[K;
+[1.091s]       |                                                                                                                 [01;35m[K^[m[K
+[1.091s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.091s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.091s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:637:43:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.091s]   637 |     TRT_DEPRECATED nvinfer1::ICudaEngine* [01;36m[KdeserializeCudaEngine[m[K(
+[1.091s]       |                                           [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[1.091s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:324:26:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::IRuntime::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.091s]   324 |         runtime->destroy([01;35m[K)[m[K; // deprecated warning 可暂时忽略
+[1.091s]       |                          [01;35m[K^[m[K
+[1.091s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.091s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.091s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.091s]   682 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.091s]       |                         [01;36m[K^~~~~~~[m[K
+[1.091s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:331:25:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::ICudaEngine::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.091s]   331 |         engine->destroy([01;35m[K)[m[K;
+[1.091s]       |                         [01;35m[K^[m[K
+[1.091s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.091s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.091s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1609:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.091s]  1609 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.091s]       |                         [01;36m[K^~~~~~~[m[K
+[1.091s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:332:26:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::IRuntime::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.092s]   332 |         runtime->destroy([01;35m[K)[m[K;
+[1.092s]       |                          [01;35m[K^[m[K
+[1.092s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.092s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.092s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.092s]   682 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.092s]       |                         [01;36m[K^~~~~~~[m[K
+[1.092s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:336:22:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::IRuntime::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.092s]   336 |     runtime->destroy([01;35m[K)[m[K; // 释放runtime(若不需重复加载)
+[1.092s]       |                      [01;35m[K^[m[K
+[1.092s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.092s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.092s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:682:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.092s]   682 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.092s]       |                         [01;36m[K^~~~~~~[m[K
+[1.118s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:[m[K In destructor ‘[01m[Kvirtual TrtInferNode::~TrtInferNode()[m[K’:
+[1.118s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:504:43:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::IExecutionContext::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.118s]   504 |         if (context_) { context_->destroy([01;35m[K)[m[K;  context_ = nullptr; }
+[1.118s]       |                                           [01;35m[K^[m[K
+[1.118s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.118s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.118s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:2369:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.118s]  2369 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.118s]       |                         [01;36m[K^~~~~~~[m[K
+[1.118s] [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:505:42:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid nvinfer1::ICudaEngine::destroy()[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+[1.118s]   505 |         if (engine_)  { engine_->destroy([01;35m[K)[m[K;   engine_  = nullptr; }
+[1.119s]       |                                          [01;35m[K^[m[K
+[1.119s] In file included from [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInfer.h:17[m[K,
+[1.119s]                  from [01m[K/home/wudi/learn_tensorrt/pointpillar_ros_version/src/trt_infer/trt_infer_node.cpp:19[m[K:
+[1.119s] [01m[K/home/wudi/TensorRT-8.5.1.7/include/NvInferRuntime.h:1609:25:[m[K [01;36m[Knote: [m[Kdeclared here
+[1.119s]  1609 |     TRT_DEPRECATED void [01;36m[Kdestroy[m[K() noexcept
+[1.119s]       |                         [01;36m[K^~~~~~~[m[K
+[3.775s] [ 33%] [32m[1mLinking CXX executable trt_infer_node[0m
+[3.997s] [100%] Built target trt_infer_node
+[4.005s] Invoked command in '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection -- -j12 -l12
+[4.012s] Invoking command in '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection
+[4.018s] -- Install configuration: ""
+[4.018s] -- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node
+[4.020s] -- Set runtime path of "/home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/lib/lidar_detection/trt_infer_node" to ""
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/package_run_dependencies/lidar_detection
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/parent_prefix_path/lidar_detection
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.sh
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/ament_prefix_path.dsv
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.sh
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/environment/path.dsv
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.bash
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.sh
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.zsh
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/local_setup.dsv
+[4.020s] -- Installing: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.dsv
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/ament_index/resource_index/packages/lidar_detection
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig.cmake
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/cmake/lidar_detectionConfig-version.cmake
+[4.020s] -- Up-to-date: /home/wudi/learn_tensorrt/pointpillar_ros_version/install/lidar_detection/share/lidar_detection/package.xml
+[4.021s] Invoked command in '/home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/wudi/learn_tensorrt/pointpillar_ros_version/build/lidar_detection

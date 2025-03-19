@@ -65,109 +65,102 @@ class Logger : public nvinfer1::ILogger
         abort(); \
     }
 
-// ============================================================================
-// 3) 一些占位 GPU/后处理函数的声明(如果你已有 .h/.cpp，请删掉此处重复定义)
-//    例如 voxelizeGpu, padCoorsGPU, decodeDetResults, nms 等
-// ============================================================================
-
-
-
 
 // ============================================================================
 // 4) trtInfer 两个版本 (引用你原先的cpp实现)。如果你已有 .cpp 实现，请删此处
 // ============================================================================
 
-// 4.1 基于 std::vector<Voxel> 的 trtInfer
-void trtInfer(std::vector<Voxel>& voxels, 
-              std::vector<std::vector<int>>& coors, 
-              std::vector<int>& num_points_per_voxel, 
-              int& max_points,
-              nvinfer1::ICudaEngine* engine, 
-              nvinfer1::IExecutionContext* context, 
-              std::vector<float>& output)
-{
-    // 这里是你原先给出的实现，如下(截取版)：
-    int inputPillarsIndex = engine->getBindingIndex("input_pillars");
-    int inputCoorsBatchIndex = engine->getBindingIndex("input_coors_batch");
-    int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar");
-    int outputIndex = engine->getBindingIndex("output_x");
+// // 4.1 基于 std::vector<Voxel> 的 trtInfer
+// void trtInfer(std::vector<Voxel>& voxels, 
+//               std::vector<std::vector<int>>& coors, 
+//               std::vector<int>& num_points_per_voxel, 
+//               int& max_points,
+//               nvinfer1::ICudaEngine* engine, 
+//               nvinfer1::IExecutionContext* context, 
+//               std::vector<float>& output)
+// {
+//     // 这里是你原先给出的实现，如下(截取版)：
+//     int inputPillarsIndex = engine->getBindingIndex("input_pillars");
+//     int inputCoorsBatchIndex = engine->getBindingIndex("input_coors_batch");
+//     int inputNpointsPerPillarIndex = engine->getBindingIndex("input_npoints_per_pillar");
+//     int outputIndex = engine->getBindingIndex("output_x");
 
-    int pillar_num = voxels.size();
+//     int pillar_num = voxels.size();
 
-    void* inputPillarsDevice;
-    void* inputCoorsBatchDevice;
-    void* inputNpointsPerPillarDevice;
+//     void* inputPillarsDevice;
+//     void* inputCoorsBatchDevice;
+//     void* inputNpointsPerPillarDevice;
 
-    CHECK(cudaMalloc(&inputPillarsDevice, pillar_num * max_points * sizeof(Point)));
-    CHECK(cudaMalloc(&inputCoorsBatchDevice, pillar_num * 4 * sizeof(int)));
-    CHECK(cudaMalloc(&inputNpointsPerPillarDevice, pillar_num * sizeof(int)));
+//     CHECK(cudaMalloc(&inputPillarsDevice, pillar_num * max_points * sizeof(Point)));
+//     CHECK(cudaMalloc(&inputCoorsBatchDevice, pillar_num * 4 * sizeof(int)));
+//     CHECK(cudaMalloc(&inputNpointsPerPillarDevice, pillar_num * sizeof(int)));
 
-    // 拷贝 host -> device
-    Point* tempHostMemoryPillar = new Point[pillar_num * max_points];
-    Point* currentHostPtrPillar = tempHostMemoryPillar;
-    for (const auto& voxel : voxels) {
-        memcpy(currentHostPtrPillar, voxel.points.data(), voxel.points.size() * sizeof(Point));
-        currentHostPtrPillar += voxel.points.size();
-    }
+//     // 拷贝 host -> device
+//     Point* tempHostMemoryPillar = new Point[pillar_num * max_points];
+//     Point* currentHostPtrPillar = tempHostMemoryPillar;
+//     for (const auto& voxel : voxels) {
+//         memcpy(currentHostPtrPillar, voxel.points.data(), voxel.points.size() * sizeof(Point));
+//         currentHostPtrPillar += voxel.points.size();
+//     }
 
-    int* tempHostMemoryCoor = new int[pillar_num * 4];
-    int* currentHostPtrCoor = tempHostMemoryCoor;
-    for (const auto& c : coors) {
-        memcpy(currentHostPtrCoor, c.data(), c.size() * sizeof(int));
-        currentHostPtrCoor += c.size();
-    }
+//     int* tempHostMemoryCoor = new int[pillar_num * 4];
+//     int* currentHostPtrCoor = tempHostMemoryCoor;
+//     for (const auto& c : coors) {
+//         memcpy(currentHostPtrCoor, c.data(), c.size() * sizeof(int));
+//         currentHostPtrCoor += c.size();
+//     }
 
-    CHECK(cudaMemcpy(inputPillarsDevice, tempHostMemoryPillar, pillar_num * max_points * sizeof(Point), cudaMemcpyHostToDevice));
-    CHECK(cudaMemcpy(inputCoorsBatchDevice, tempHostMemoryCoor, pillar_num * 4 * sizeof(int), cudaMemcpyHostToDevice));
-    CHECK(cudaMemcpy(inputNpointsPerPillarDevice, num_points_per_voxel.data(), pillar_num * sizeof(int), cudaMemcpyHostToDevice));
+//     CHECK(cudaMemcpy(inputPillarsDevice, tempHostMemoryPillar, pillar_num * max_points * sizeof(Point), cudaMemcpyHostToDevice));
+//     CHECK(cudaMemcpy(inputCoorsBatchDevice, tempHostMemoryCoor, pillar_num * 4 * sizeof(int), cudaMemcpyHostToDevice));
+//     CHECK(cudaMemcpy(inputNpointsPerPillarDevice, num_points_per_voxel.data(), pillar_num * sizeof(int), cudaMemcpyHostToDevice));
 
-    delete[] tempHostMemoryPillar;
-    delete[] tempHostMemoryCoor;
+//     delete[] tempHostMemoryPillar;
+//     delete[] tempHostMemoryCoor;
 
-    // 分配输出
-    void* outputDevice;
-    CHECK(cudaMalloc(&outputDevice, output.size() * sizeof(float)));
+//     // 分配输出
+//     void* outputDevice;
+//     CHECK(cudaMalloc(&outputDevice, output.size() * sizeof(float)));
 
-    // 设置 input dims
-    nvinfer1::Dims inputPilllarDims, inputCoorsDims, inputNpointsPerPillarDims;
-    inputPilllarDims.nbDims = 3;
-    inputPilllarDims.d[0] = pillar_num;
-    inputPilllarDims.d[1] = max_points;
-    inputPilllarDims.d[2] = sizeof(Point)/sizeof(float);
+//     // 设置 input dims
+//     nvinfer1::Dims inputPilllarDims, inputCoorsDims, inputNpointsPerPillarDims;
+//     inputPilllarDims.nbDims = 3;
+//     inputPilllarDims.d[0] = pillar_num;
+//     inputPilllarDims.d[1] = max_points;
+//     inputPilllarDims.d[2] = sizeof(Point)/sizeof(float);
 
-    inputCoorsDims.nbDims = 2;
-    inputCoorsDims.d[0] = pillar_num;
-    inputCoorsDims.d[1] = 4;
+//     inputCoorsDims.nbDims = 2;
+//     inputCoorsDims.d[0] = pillar_num;
+//     inputCoorsDims.d[1] = 4;
 
-    inputNpointsPerPillarDims.nbDims = 1;
-    inputNpointsPerPillarDims.d[0] = pillar_num;
+//     inputNpointsPerPillarDims.nbDims = 1;
+//     inputNpointsPerPillarDims.d[0] = pillar_num;
 
-    if (!context->setBindingDimensions(inputPillarsIndex, inputPilllarDims)) {
-        std::cerr << "setBindingDimensions error for input_pillars.\n";
-    }
-    if (!context->setBindingDimensions(inputCoorsBatchIndex, inputCoorsDims)) {
-        std::cerr << "setBindingDimensions error for input_coors_batch.\n";
-    }
-    if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims)) {
-        std::cerr << "setBindingDimensions error for input_npoints_per_pillar.\n";
-    }
+//     if (!context->setBindingDimensions(inputPillarsIndex, inputPilllarDims)) {
+//         std::cerr << "setBindingDimensions error for input_pillars.\n";
+//     }
+//     if (!context->setBindingDimensions(inputCoorsBatchIndex, inputCoorsDims)) {
+//         std::cerr << "setBindingDimensions error for input_coors_batch.\n";
+//     }
+//     if (!context->setBindingDimensions(inputNpointsPerPillarIndex, inputNpointsPerPillarDims)) {
+//         std::cerr << "setBindingDimensions error for input_npoints_per_pillar.\n";
+//     }
 
-    void* buffers[4];
-    buffers[inputPillarsIndex]          = inputPillarsDevice;
-    buffers[inputCoorsBatchIndex]       = inputCoorsBatchDevice;
-    buffers[inputNpointsPerPillarIndex] = inputNpointsPerPillarDevice;
-    buffers[outputIndex]                = outputDevice;
+//     void* buffers[4];
+//     buffers[inputPillarsIndex]          = inputPillarsDevice;
+//     buffers[inputCoorsBatchIndex]       = inputCoorsBatchDevice;
+//     buffers[inputNpointsPerPillarIndex] = inputNpointsPerPillarDevice;
+//     buffers[outputIndex]                = outputDevice;
 
-    context->enqueueV2(buffers, 0, nullptr);
+//     context->enqueueV2(buffers, 0, nullptr);
 
-    CHECK(cudaMemcpy(output.data(), outputDevice, output.size() * sizeof(float), cudaMemcpyDeviceToHost));
+//     CHECK(cudaMemcpy(output.data(), outputDevice, output.size() * sizeof(float), cudaMemcpyDeviceToHost));
 
-    // 释放
-    cudaFree(inputPillarsDevice);
-    cudaFree(inputCoorsBatchDevice);
-    cudaFree(inputNpointsPerPillarDevice);
-    cudaFree(outputDevice);
-}
+//     // 释放
+//     cudaFree(inputPillarsDevice);
+//     cudaFree(inputCoorsBatchDevice);
+//     cudaFree(inputNpointsPerPillarDevice);
+//     cudaFree(outputDevice);
+// }
 
 // 4.2 基于 GPU指针(float* d_voxels等)的 trtInfer
 void trtInfer(float* d_voxels,
@@ -354,19 +347,30 @@ void convertCloud2ToPoints(const sensor_msgs::msg::PointCloud2::SharedPtr &cloud
     points_out.clear();
     points_out.reserve(cloud_msg->width * cloud_msg->height);
 
-    int offset_x = -1, offset_y = -1, offset_z = -1;
-    for (auto &f : cloud_msg->fields) {
-        if (f.name == "x") offset_x = f.offset;
-        if (f.name == "y") offset_y = f.offset;
-        if (f.name == "z") offset_z = f.offset;
+    // 查找 x, y, z, intensity 对应的 offset
+    int offset_x = -1, offset_y = -1, offset_z = -1, offset_i = -1;
+    for (auto &field : cloud_msg->fields) {
+        if (field.name == "x") {
+            offset_x = field.offset;
+        } else if (field.name == "y") {
+            offset_y = field.offset;
+        } else if (field.name == "z") {
+            offset_z = field.offset;
+        } else if (field.name == "intensity") {
+            offset_i = field.offset;
+        }
     }
+
+    // 基本检查
     if (offset_x < 0 || offset_y < 0 || offset_z < 0) {
         RCLCPP_ERROR(logger, "PointCloud2 fields do not match x,y,z float32!");
         return;
     }
+    // 对于 intensity，可以允许没有（offset_i < 0 表示可能没有），
+    // 如果一定需要 intensity 才能继续，则也可以在这里 return
 
     const size_t total_points = cloud_msg->width * cloud_msg->height;
-    const uint8_t * ptr = cloud_msg->data.data();
+    const uint8_t *ptr = cloud_msg->data.data();
 
     for (size_t i = 0; i < total_points; ++i) {
         float px = *reinterpret_cast<const float*>(ptr + offset_x);
@@ -377,10 +381,18 @@ void convertCloud2ToPoints(const sensor_msgs::msg::PointCloud2::SharedPtr &cloud
         pt.x = px;
         pt.y = py;
         pt.z = pz;
-        // 若 Point 有 intensity，可加: pt.intensity = ...
+        
+        // 如果找到了 intensity 字段，就解析它
+        if (offset_i >= 0) {
+            float intensity = *reinterpret_cast<const float*>(ptr + offset_i);
+            pt.feature = intensity;
+        } else {
+            pt.feature = 0.0f;  // 或者给一个默认值
+        }
 
         points_out.push_back(pt);
 
+        // 跳到下一个点的数据开始位置
         ptr += cloud_msg->point_step;
     }
 }
@@ -518,7 +530,7 @@ private:
             const auto& box = bboxes[i];
             oss << "  [" << i << "]: x=" << box.x << ", y=" << box.y << ", z=" << box.z
                 << ", w=" << box.w << ", l=" << box.l << ", h=" << box.h
-                << ", score=" << box.score << ", label=" << box.label << "\n";
+                << ", theta=" << box.theta << ", score=" << box.score << ", label=" << box.label << "\n";
         }
         result_msg.data = oss.str();
         result_pub_->publish(result_msg);
